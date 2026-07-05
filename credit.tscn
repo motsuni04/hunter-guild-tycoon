@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://0nuueia0xwnq"]
+
+[ext_resource type="Texture2D" uid="uid://caq2lqbcyxjgq" path="res://credit.png" id="1_7q1b3"]
+
+[node name="Credit" type="Control" unique_id=989666667]
+custom_minimum_size = Vector2(1500, 900)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1500.0
+offset_bottom = 900.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=148883096]
+layout_mode = 0
+offset_right = 1500.0
+offset_bottom = 900.0
+texture = ExtResource("1_7q1b3")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=1809586687]
+layout_mode = 0
+offset_right = 1500.0
+offset_bottom = 900.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer" unique_id=589918328]
+layout_mode = 2
+
+[node name="Credit" type="Label" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=1417794775]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "<크레딧>"
+horizontal_alignment = 1
+
+[node name="Development" type="Label" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=2108807265]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "개발: 대 도 현"
+horizontal_alignment = 1
+
+[node name="Graphic" type="Label" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=1973549648]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "그래픽: 대 도 현"
+horizontal_alignment = 1
+
+[node name="Story" type="Label" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=1013141582]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "스토리: 대 도 현"
+horizontal_alignment = 1
+
+[node name="Sound" type="Label" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=72769163]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "사운드: 대 도 현"
+horizontal_alignment = 1
+
+[node name="SpecialThanks" type="Label" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=1198820549]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "Special Thanks: 대 도 현"
+horizontal_alignment = 1
