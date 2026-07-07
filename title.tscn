@@ -1,7 +1,9 @@
 [gd_scene format=4 uid="uid://bk0k0i7bku8gm"]
 
 [ext_resource type="Texture2D" uid="uid://kqpacf3iqrmp" path="res://title_background.png" id="1_kpexm"]
+[ext_resource type="Script" uid="uid://biuswog8jivf4" path="res://title.gd" id="1_mom7w"]
 [ext_resource type="Texture2D" uid="uid://cbq5d7ml1jkbn" path="res://title_text.png" id="2_oyqm6"]
+[ext_resource type="PackedScene" uid="uid://0nuueia0xwnq" path="res://credit.tscn" id="3_7lgly"]
 [ext_resource type="PackedScene" uid="uid://bhlkoqsdyq3rn" path="res://base_button.tscn" id="3_kpexm"]
 
 [sub_resource type="Image" id="Image_oyqm6"]
@@ -843,6 +845,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mom7w")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1389924220]
 layout_mode = 1
@@ -904,3 +907,24 @@ text = "설정
 [node name="Button4" parent="MarginContainer/Layout/ButtonContainer" unique_id=47693985 instance=ExtResource("3_kpexm")]
 layout_mode = 2
 text = "크레딧"
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=1634309781]
+visible = false
+layout_mode = 2
+
+[node name="Credit" parent="MarginContainer/CenterContainer" unique_id=520209998 instance=ExtResource("3_7lgly")]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="MarginContainer/CenterContainer/Credit" unique_id=1369341596]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -115.0
+offset_bottom = 96.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 64
+text = "  X  "
+
+[connection signal="pressed" from="MarginContainer/Layout/ButtonContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/Credit/Exit" to="." method="_on_exit_pressed"]

@@ -2,10 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://caq2lqbcyxjgq" path="res://credit.png" id="1_7q1b3"]
 
-[node name="Credit" type="Control" unique_id=989666667]
+[node name="Credit" type="Panel" unique_id=482644580]
 custom_minimum_size = Vector2(1500, 900)
-layout_mode = 3
-anchors_preset = 0
 offset_right = 1500.0
 offset_bottom = 900.0
 
