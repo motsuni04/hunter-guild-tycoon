@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://btr2vdcooa08"]
+
+[ext_resource type="Script" uid="uid://clc8l5q8qg5fx" path="res://setting.gd" id="1_110nh"]
+[ext_resource type="Texture2D" uid="uid://caq2lqbcyxjgq" path="res://credit.png" id="1_a42w7"]
+
+[node name="Setting" type="CenterContainer" unique_id=1103409797]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_110nh")
+
+[node name="Control" type="Control" parent="." unique_id=299788299]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=645256030]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/PanelContainer" unique_id=333873032]
+layout_mode = 2
+texture = ExtResource("1_a42w7")
+expand_mode = 1
+
+[node name="Exit" type="Button" parent="Control/PanelContainer/TextureRect" unique_id=1518566050]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 48
+text = "  X  "
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer" unique_id=105530857]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 75
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/MarginContainer" unique_id=526569799]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=683416395]
+layout_mode = 2
+mouse_filter = 2
+
+[connection signal="pressed" from="Control/PanelContainer/TextureRect/Exit" to="." method="_on_exit_pressed"]
