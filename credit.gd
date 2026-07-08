@@ -1,6 +1,4 @@
-extends Control
-
-const CREDIT = preload("res://credit.tscn")
+extends CenterContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,6 +10,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_button_4_pressed() -> void:
-	var credit = CREDIT.instantiate()
-	add_child(credit)
+func _on_exit_pressed() -> void:
+	queue_free()
