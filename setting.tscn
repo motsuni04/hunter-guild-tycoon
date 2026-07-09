@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://btr2vdcooa08"]
+[gd_scene format=3 uid="uid://brx22e1hq2frs"]
 
-[ext_resource type="Script" uid="uid://clc8l5q8qg5fx" path="res://setting.gd" id="1_110nh"]
+[ext_resource type="Script" path="res://setting.gd" id="1_110nh"]
 [ext_resource type="Texture2D" uid="uid://caq2lqbcyxjgq" path="res://credit.png" id="1_a42w7"]
 
 [node name="Setting" type="CenterContainer" unique_id=1103409797]
