@@ -56,8 +56,100 @@ theme_override_constants/margin_bottom = 75
 layout_mode = 2
 mouse_filter = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=683416395]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1164031307]
 layout_mode = 2
 mouse_filter = 2
 
+[node name="Master" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=504179635]
+custom_minimum_size = Vector2(110, 80)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "전체"
+vertical_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=89719486]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="MasterVolume" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1741771383]
+custom_minimum_size = Vector2(70, 80)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=683416395]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Bgm" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=844392961]
+custom_minimum_size = Vector2(110, 80)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "BGM"
+vertical_alignment = 1
+
+[node name="BgmSlider" type="HSlider" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=813360384]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="BgmVolume" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1095702499]
+custom_minimum_size = Vector2(70, 80)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1824306739]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Sfx" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1209439328]
+custom_minimum_size = Vector2(110, 80)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "효과음"
+vertical_alignment = 1
+
+[node name="SfxSlider" type="HSlider" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=596325935]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="SfxVolume" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1871984032]
+custom_minimum_size = Vector2(70, 80)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Control/PanelContainer/TextureRect/Exit" to="." method="_on_exit_pressed"]
+[connection signal="value_changed" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/BgmSlider" to="." method="_on_bgm_slider_value_changed"]
+[connection signal="value_changed" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/SfxSlider" to="." method="_on_sfx_slider_value_changed"]

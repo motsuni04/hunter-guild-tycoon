@@ -13,8 +13,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+
 func _on_button_3_pressed() -> void:
 	setting.show()
+
 
 func _on_button_4_pressed() -> void:
 	var credit = CREDIT.instantiate()
