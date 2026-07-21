@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://0nuueia0xwnq"]
 
-[ext_resource type="Texture2D" uid="uid://caq2lqbcyxjgq" path="res://credit.png" id="1_7q1b3"]
 [ext_resource type="Script" uid="uid://gfbqqlrlaayn" path="res://credit.gd" id="1_pxe7y"]
+[ext_resource type="Texture2D" uid="uid://dfm5gln2eqcui" path="res://game_background.svg" id="2_pxe7y"]
 
 [node name="Credit" type="CenterContainer" unique_id=370040019]
 anchors_preset = 15
@@ -30,8 +30,8 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control/PanelContainer" unique_id=148883096]
 layout_mode = 2
-texture = ExtResource("1_7q1b3")
-expand_mode = 1
+texture = ExtResource("2_pxe7y")
+stretch_mode = 1
 
 [node name="Exit" type="Button" parent="Control/PanelContainer/TextureRect" unique_id=1473801735]
 layout_mode = 1
