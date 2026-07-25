@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bhlkoqsdyq3rn"]
+
+[ext_resource type="FontFile" uid="uid://deimdqp32x0o" path="res://assets/fonts/MonaS10.ttf" id="1_k1upb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvp4i"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_disabled"]
+bg_color = Color(0.75, 0.75, 0.75, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" unique_id=638530748]
+custom_minimum_size = Vector2(400, 100)
+offset_right = 400.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_k1upb")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_tvp4i")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_disabled")
+text = "시작하기"

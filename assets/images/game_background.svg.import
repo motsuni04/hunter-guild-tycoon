@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du870lngcu1gj"
-path="res://.godot/imported/hunter_profile.png-da2282e4a31713fa6fdaed442dd22707.ctex"
+uid="uid://dfm5gln2eqcui"
+path="res://.godot/imported/game_background.svg-0cbd69751961500b77432dad0e051874.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hunter_profile.png"
-dest_files=["res://.godot/imported/hunter_profile.png-da2282e4a31713fa6fdaed442dd22707.ctex"]
+source_file="res://assets/images/game_background.svg"
+dest_files=["res://.godot/imported/game_background.svg-0cbd69751961500b77432dad0e051874.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

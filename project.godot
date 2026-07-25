@@ -13,14 +13,22 @@ config_version=5
 config/name="헌터 길드 키우기"
 run/main_scene="uid://bk0k0i7bku8gm"
 config/features=PackedStringArray("4.6", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+config/icon="uid://cxrx0qbt6vmvq"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[input_devices]
+
+pointing/android/enable_long_press_as_right_click=true
+pointing/emulate_touch_from_mouse=true
 
 [physics]
 

@@ -1,0 +1,49 @@
+[gd_scene format=3]
+
+[ext_resource type="FontFile" uid="uid://deimdqp32x0o" path="res://assets/fonts/MonaS10.ttf" id="1_font"]
+[ext_resource type="PackedScene" path="res://scenes/windows/recruit_info.tscn" id="2_recruitinfo"]
+
+[node name="ResearchWindow" type="VBoxContainer" unique_id=6660001]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="." unique_id=6660002]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 40
+text = "기술 연구"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=6660003]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="TechInfoList" type="VBoxContainer" parent="ScrollContainer" unique_id=6660004]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="TechInfo" parent="ScrollContainer/TechInfoList" unique_id=6660005 instance=ExtResource("2_recruitinfo")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HunterName" parent="ScrollContainer/TechInfoList/TechInfo/MarginContainer/HBoxContainer" index="1"]
+text = "기술 이름"
+
+[node name="TechInfo2" parent="ScrollContainer/TechInfoList" unique_id=6660006 instance=ExtResource("2_recruitinfo")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HunterName" parent="ScrollContainer/TechInfoList/TechInfo2/MarginContainer/HBoxContainer" index="1"]
+text = "기술 이름"
+
+[node name="TechInfo3" parent="ScrollContainer/TechInfoList" unique_id=6660007 instance=ExtResource("2_recruitinfo")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HunterName" parent="ScrollContainer/TechInfoList/TechInfo3/MarginContainer/HBoxContainer" index="1"]
+text = "기술 이름"

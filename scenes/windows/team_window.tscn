@@ -1,0 +1,82 @@
+[gd_scene format=3]
+
+[ext_resource type="FontFile" uid="uid://deimdqp32x0o" path="res://assets/fonts/MonaS10.ttf" id="1_font"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slot"]
+bg_color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="TeamWindow" type="VBoxContainer" unique_id=6630001]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="." unique_id=6630002]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 40
+text = "파티 편성"
+horizontal_alignment = 1
+
+[node name="SlotContainer" type="HBoxContainer" parent="." unique_id=6630003]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+theme_override_constants/separation = 20
+
+[node name="PartySlot" type="PanelContainer" parent="SlotContainer" unique_id=6630004]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
+
+[node name="Label" type="Label" parent="SlotContainer/PartySlot" unique_id=6630005]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 24
+text = "빈 자리"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PartySlot2" type="PanelContainer" parent="SlotContainer" unique_id=6630006]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
+
+[node name="Label" type="Label" parent="SlotContainer/PartySlot2" unique_id=6630007]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 24
+text = "빈 자리"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PartySlot3" type="PanelContainer" parent="SlotContainer" unique_id=6630008]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
+
+[node name="Label" type="Label" parent="SlotContainer/PartySlot3" unique_id=6630009]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 24
+text = "빈 자리"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PartySlot4" type="PanelContainer" parent="SlotContainer" unique_id=6630010]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
+
+[node name="Label" type="Label" parent="SlotContainer/PartySlot4" unique_id=6630011]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 24
+text = "빈 자리"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://brx22e1hq2frs"]
 
-[ext_resource type="Script" uid="uid://clc8l5q8qg5fx" path="res://setting.gd" id="1_110nh"]
-[ext_resource type="Texture2D" uid="uid://dfm5gln2eqcui" path="res://game_background.svg" id="2_110nh"]
+[ext_resource type="Script" uid="uid://clc8l5q8qg5fx" path="res://scenes/popups/setting.gd" id="1_110nh"]
+[ext_resource type="Texture2D" uid="uid://dfm5gln2eqcui" path="res://assets/images/game_background.svg" id="2_110nh"]
 
 [node name="Setting" type="CenterContainer" unique_id=1103409797]
 anchors_preset = 15

@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://73ltxs2k8wd2"]
 
-[ext_resource type="Texture2D" uid="uid://d1va2a8x5jwf4" path="res://icon.svg" id="1_7jktm"]
-[ext_resource type="Texture2D" uid="uid://dfm5gln2eqcui" path="res://game_background.svg" id="1_80nbo"]
-[ext_resource type="Script" uid="uid://bx4n2g5ed3bxq" path="res://mesh_instance_3d.gd" id="2_e2o6t"]
-[ext_resource type="PackedScene" uid="uid://bhlkoqsdyq3rn" path="res://base_button.tscn" id="2_feb5d"]
-[ext_resource type="Texture2D" uid="uid://du870lngcu1gj" path="res://hunter_profile.png" id="2_ryrav"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_80nbo"]
+[ext_resource type="FontFile" uid="uid://deimdqp32x0o" path="res://assets/fonts/MonaS10.ttf" id="1_ryrav"]
+[ext_resource type="PackedScene" uid="uid://bhlkoqsdyq3rn" path="res://scenes/ui_common/base_button.tscn" id="2_feb5d"]
+[ext_resource type="Texture2D" uid="uid://b3tudt2ojrf7j" path="res://assets/images/guild_viewer_pixel.png" id="4_ryrav"]
+[ext_resource type="Texture2D" uid="uid://dwv1hvtw5c8g3" path="res://assets/images/controller_background_beige.svg" id="5_beige"]
+[ext_resource type="Texture2D" uid="uid://dje6j14hu6crn" path="res://assets/images/gold_texture_pixel.png" id="6_gold"]
+[ext_resource type="Texture2D" uid="uid://cnm2qykgfovym" path="res://assets/images/member_texture_pixel.png" id="7_member"]
+[ext_resource type="Script" uid="uid://dqftqv2sv1oy4" path="res://scenes/main/game.gd" id="8_game"]
 
 [node name="Game" type="Control" unique_id=2021903045]
 layout_mode = 3
@@ -15,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("8_game")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=110970589]
 layout_mode = 1
@@ -40,62 +41,60 @@ theme_override_constants/separation = 50
 
 [node name="GuildName" type="Label" parent="VBoxContainer/TopBar/MarginContainer/HBoxContainer" unique_id=754587380]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_fonts/font = ExtResource("1_ryrav")
+theme_override_font_sizes/font_size = 40
 text = "플레이어 길드"
 
 [node name="Date" type="Label" parent="VBoxContainer/TopBar/MarginContainer/HBoxContainer" unique_id=265522497]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_fonts/font = ExtResource("1_ryrav")
+theme_override_font_sizes/font_size = 40
 text = "1년차 7월 11일"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TopBar/MarginContainer/HBoxContainer" unique_id=1858805200]
 layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TopBar/MarginContainer/HBoxContainer/HBoxContainer" unique_id=682306968]
+[node name="GoldTexture" type="TextureRect" parent="VBoxContainer/TopBar/MarginContainer/HBoxContainer/HBoxContainer" unique_id=682306968]
+texture_filter = 1
 layout_mode = 2
-texture = ExtResource("1_7jktm")
+texture = ExtResource("6_gold")
 expand_mode = 2
 
 [node name="Gold" type="Label" parent="VBoxContainer/TopBar/MarginContainer/HBoxContainer/HBoxContainer" unique_id=957070068]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_fonts/font = ExtResource("1_ryrav")
+theme_override_font_sizes/font_size = 40
 text = "1780"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/TopBar/MarginContainer/HBoxContainer" unique_id=1077247716]
 layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TopBar/MarginContainer/HBoxContainer/HBoxContainer2" unique_id=222730102]
+[node name="MemberTexture" type="TextureRect" parent="VBoxContainer/TopBar/MarginContainer/HBoxContainer/HBoxContainer2" unique_id=222730102]
+texture_filter = 1
 layout_mode = 2
-texture = ExtResource("2_ryrav")
+texture = ExtResource("7_member")
 expand_mode = 2
 
-[node name="Headcount" type="Label" parent="VBoxContainer/TopBar/MarginContainer/HBoxContainer/HBoxContainer2" unique_id=1347069788]
+[node name="Member" type="Label" parent="VBoxContainer/TopBar/MarginContainer/HBoxContainer/HBoxContainer2" unique_id=1347069788]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_fonts/font = ExtResource("1_ryrav")
+theme_override_font_sizes/font_size = 40
 text = "1/20"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1654690819]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="GuildViewer" type="SubViewportContainer" parent="VBoxContainer/HBoxContainer" unique_id=1424240972]
+[node name="GuildViewer" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1424240972]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.5
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="VBoxContainer/HBoxContainer/GuildViewer" unique_id=62876476]
-handle_input_locally = false
-size = Vector2i(862, 844)
-render_target_update_mode = 4
-
-[node name="Camera3D" type="Camera3D" parent="VBoxContainer/HBoxContainer/GuildViewer/SubViewport" unique_id=1366244297]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.4768927)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VBoxContainer/HBoxContainer/GuildViewer/SubViewport" unique_id=268636196]
-transform = Transform3D(0.6503501, 0.7596346, 0, -0.7596346, 0.6503501, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_80nbo")
-script = ExtResource("2_e2o6t")
+texture = ExtResource("4_ryrav")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Controller" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=2000623438]
 layout_mode = 2
@@ -105,7 +104,7 @@ size_flags_stretch_ratio = 5.5
 [node name="ControllerBackground" type="TextureRect" parent="VBoxContainer/HBoxContainer/Controller" unique_id=1916959518]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("1_80nbo")
+texture = ExtResource("5_beige")
 stretch_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/Controller/ControllerBackground" unique_id=457847751]
@@ -120,7 +119,7 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Controller/ControllerBackground/MarginContainer" unique_id=729946262]
+[node name="ControllerContent" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Controller/ControllerBackground/MarginContainer" unique_id=729946262]
 layout_mode = 2
 theme_override_constants/separation = 40
 
@@ -137,7 +136,7 @@ theme_override_constants/margin_bottom = 20
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/LowBar/MarginContainer" unique_id=1441437311]
 layout_mode = 2
 
-[node name="Button" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=638530748 instance=ExtResource("2_feb5d")]
+[node name="RecruitButton" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=638530748 instance=ExtResource("2_feb5d")]
 custom_minimum_size = Vector2(180, 80)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -145,7 +144,7 @@ theme_override_font_sizes/font_size = 36
 text = "인재 모집
 "
 
-[node name="Button2" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=97632282 instance=ExtResource("2_feb5d")]
+[node name="TrainButton" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=97632282 instance=ExtResource("2_feb5d")]
 custom_minimum_size = Vector2(180, 80)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -153,7 +152,7 @@ theme_override_font_sizes/font_size = 36
 text = "헌터 육성
 "
 
-[node name="Button3" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=995868638 instance=ExtResource("2_feb5d")]
+[node name="TeamButton" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=995868638 instance=ExtResource("2_feb5d")]
 custom_minimum_size = Vector2(180, 80)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -161,21 +160,21 @@ theme_override_font_sizes/font_size = 36
 text = "파티 편성
 "
 
-[node name="Button4" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=1185624381 instance=ExtResource("2_feb5d")]
+[node name="BattleButton" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=1185624381 instance=ExtResource("2_feb5d")]
 custom_minimum_size = Vector2(180, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 36
 text = "던전 파견"
 
-[node name="Button5" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=275923653 instance=ExtResource("2_feb5d")]
+[node name="BuildButton" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=275923653 instance=ExtResource("2_feb5d")]
 custom_minimum_size = Vector2(180, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 36
 text = "시설 건설"
 
-[node name="Button6" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=1613288516 instance=ExtResource("2_feb5d")]
+[node name="ItemButton" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=1613288516 instance=ExtResource("2_feb5d")]
 custom_minimum_size = Vector2(180, 80)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -183,9 +182,17 @@ theme_override_font_sizes/font_size = 36
 text = "장비 제작
 "
 
-[node name="Button7" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=1984894315 instance=ExtResource("2_feb5d")]
+[node name="ResearchButton" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=1984894315 instance=ExtResource("2_feb5d")]
 custom_minimum_size = Vector2(180, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 36
 text = "기술 연구"
+
+[connection signal="pressed" from="VBoxContainer/LowBar/MarginContainer/HBoxContainer2/RecruitButton" to="." method="_on_recruit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LowBar/MarginContainer/HBoxContainer2/TrainButton" to="." method="_on_train_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LowBar/MarginContainer/HBoxContainer2/TeamButton" to="." method="_on_team_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LowBar/MarginContainer/HBoxContainer2/BattleButton" to="." method="_on_battle_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LowBar/MarginContainer/HBoxContainer2/BuildButton" to="." method="_on_build_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LowBar/MarginContainer/HBoxContainer2/ItemButton" to="." method="_on_item_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LowBar/MarginContainer/HBoxContainer2/ResearchButton" to="." method="_on_research_button_pressed"]

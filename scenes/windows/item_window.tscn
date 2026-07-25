@@ -1,0 +1,49 @@
+[gd_scene format=3]
+
+[ext_resource type="FontFile" uid="uid://deimdqp32x0o" path="res://assets/fonts/MonaS10.ttf" id="1_font"]
+[ext_resource type="PackedScene" path="res://scenes/windows/recruit_info.tscn" id="2_recruitinfo"]
+
+[node name="ItemWindow" type="VBoxContainer" unique_id=6650001]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="." unique_id=6650002]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 40
+text = "장비 제작"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=6650003]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="EquipInfoList" type="VBoxContainer" parent="ScrollContainer" unique_id=6650004]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="EquipInfo" parent="ScrollContainer/EquipInfoList" unique_id=6650005 instance=ExtResource("2_recruitinfo")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HunterName" parent="ScrollContainer/EquipInfoList/EquipInfo/MarginContainer/HBoxContainer" index="1"]
+text = "장비 이름"
+
+[node name="EquipInfo2" parent="ScrollContainer/EquipInfoList" unique_id=6650006 instance=ExtResource("2_recruitinfo")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HunterName" parent="ScrollContainer/EquipInfoList/EquipInfo2/MarginContainer/HBoxContainer" index="1"]
+text = "장비 이름"
+
+[node name="EquipInfo3" parent="ScrollContainer/EquipInfoList" unique_id=6650007 instance=ExtResource("2_recruitinfo")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HunterName" parent="ScrollContainer/EquipInfoList/EquipInfo3/MarginContainer/HBoxContainer" index="1"]
+text = "장비 이름"

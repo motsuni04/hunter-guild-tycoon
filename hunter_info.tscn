@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cefqphhtteg8c"]
 
-[ext_resource type="Texture2D" uid="uid://du870lngcu1gj" path="res://hunter_profile.png" id="1_s3amh"]
+[ext_resource type="Texture2D" uid="uid://du870lngcu1gj" path="res://assets/images/hunter_profile.png" id="1_s3amh"]
 
 [node name="HunterInfo" type="PanelContainer" unique_id=1734973447]
 offset_right = 600.0
