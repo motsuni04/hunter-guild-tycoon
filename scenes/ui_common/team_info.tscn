@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dmhk1cnrx323r"]
+
+[ext_resource type="FontFile" uid="uid://deimdqp32x0o" path="res://assets/fonts/MonaS10.ttf" id="1_kryvg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sqpmx"]
+
+[node name="TeamInfo" type="PanelContainer" unique_id=4571090]
+theme_override_styles/panel = SubResource("StyleBoxFlat_sqpmx")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=548881141]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=125974877]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Number" type="Label" parent="MarginContainer/HBoxContainer" unique_id=494741672]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_kryvg")
+theme_override_font_sizes/font_size = 60
+text = "1팀"
+vertical_alignment = 1
+
+[node name="Profile" type="ColorRect" parent="MarginContainer/HBoxContainer" unique_id=469972058]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Profile2" type="ColorRect" parent="MarginContainer/HBoxContainer" unique_id=1765882902]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Profile3" type="ColorRect" parent="MarginContainer/HBoxContainer" unique_id=1319494311]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Profile4" type="ColorRect" parent="MarginContainer/HBoxContainer" unique_id=317230874]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+size_flags_vertical = 4

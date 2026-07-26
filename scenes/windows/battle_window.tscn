@@ -1,10 +1,11 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://d4cmxbu611p3v"]
 
 [ext_resource type="FontFile" uid="uid://deimdqp32x0o" path="res://assets/fonts/MonaS10.ttf" id="1_font"]
-[ext_resource type="PackedScene" path="res://scenes/windows/recruit_info.tscn" id="2_recruitinfo"]
+[ext_resource type="PackedScene" uid="uid://bycvh6v57cfu4" path="res://scenes/ui_common/base_info.tscn" id="2_recruitinfo"]
 
 [node name="BattleWindow" type="VBoxContainer" unique_id=6620001]
-layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 15
@@ -29,21 +30,11 @@ theme_override_constants/separation = 15
 
 [node name="DungeonInfo" parent="ScrollContainer/DungeonInfoList" unique_id=6620005 instance=ExtResource("2_recruitinfo")]
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="HunterName" parent="ScrollContainer/DungeonInfoList/DungeonInfo/MarginContainer/HBoxContainer" index="1"]
+[node name="Name" parent="ScrollContainer/DungeonInfoList/DungeonInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(6620005, -982522293) index="1" unique_id=-982522291]
 text = "던전 이름"
 
-[node name="DungeonInfo2" parent="ScrollContainer/DungeonInfoList" unique_id=6620006 instance=ExtResource("2_recruitinfo")]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="Information" parent="ScrollContainer/DungeonInfoList/DungeonInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(6620005, -982522293) index="2" unique_id=1999868967]
+text = "최하급"
 
-[node name="HunterName" parent="ScrollContainer/DungeonInfoList/DungeonInfo2/MarginContainer/HBoxContainer" index="1"]
-text = "던전 이름"
-
-[node name="DungeonInfo3" parent="ScrollContainer/DungeonInfoList" unique_id=6620007 instance=ExtResource("2_recruitinfo")]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="HunterName" parent="ScrollContainer/DungeonInfoList/DungeonInfo3/MarginContainer/HBoxContainer" index="1"]
-text = "던전 이름"
+[editable path="ScrollContainer/DungeonInfoList/DungeonInfo"]

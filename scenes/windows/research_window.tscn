@@ -1,10 +1,11 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://dekqi22aa3pp5"]
 
 [ext_resource type="FontFile" uid="uid://deimdqp32x0o" path="res://assets/fonts/MonaS10.ttf" id="1_font"]
-[ext_resource type="PackedScene" path="res://scenes/windows/recruit_info.tscn" id="2_recruitinfo"]
+[ext_resource type="PackedScene" uid="uid://bycvh6v57cfu4" path="res://scenes/ui_common/base_info.tscn" id="2_recruitinfo"]
 
 [node name="ResearchWindow" type="VBoxContainer" unique_id=6660001]
-layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 15
@@ -29,21 +30,11 @@ theme_override_constants/separation = 15
 
 [node name="TechInfo" parent="ScrollContainer/TechInfoList" unique_id=6660005 instance=ExtResource("2_recruitinfo")]
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="HunterName" parent="ScrollContainer/TechInfoList/TechInfo/MarginContainer/HBoxContainer" index="1"]
+[node name="Name" parent="ScrollContainer/TechInfoList/TechInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(6660005, -982522293) index="1" unique_id=-982522291]
 text = "기술 이름"
 
-[node name="TechInfo2" parent="ScrollContainer/TechInfoList" unique_id=6660006 instance=ExtResource("2_recruitinfo")]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="Information" parent="ScrollContainer/TechInfoList/TechInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(6660005, -982522293) index="2" unique_id=1999868967]
+text = "1,500만원"
 
-[node name="HunterName" parent="ScrollContainer/TechInfoList/TechInfo2/MarginContainer/HBoxContainer" index="1"]
-text = "기술 이름"
-
-[node name="TechInfo3" parent="ScrollContainer/TechInfoList" unique_id=6660007 instance=ExtResource("2_recruitinfo")]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="HunterName" parent="ScrollContainer/TechInfoList/TechInfo3/MarginContainer/HBoxContainer" index="1"]
-text = "기술 이름"
+[editable path="ScrollContainer/TechInfoList/TechInfo"]

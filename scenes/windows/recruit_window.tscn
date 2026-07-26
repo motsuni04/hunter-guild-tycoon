@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://ccvr0aefasb3j"]
 
 [ext_resource type="FontFile" uid="uid://deimdqp32x0o" path="res://assets/fonts/MonaS10.ttf" id="1_font"]
-[ext_resource type="PackedScene" path="res://scenes/windows/recruit_info.tscn" id="2_recruitinfo"]
+[ext_resource type="PackedScene" uid="uid://bycvh6v57cfu4" path="res://scenes/ui_common/base_info.tscn" id="2_recruitinfo"]
 
 [node name="RecruitWindow" type="VBoxContainer" unique_id=192245705]
-offset_right = 1236.0
-offset_bottom = 898.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 15
@@ -29,11 +29,9 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 15
 
 [node name="RecruitInfo" parent="ScrollContainer/RecruitInfoList" unique_id=192245709 instance=ExtResource("2_recruitinfo")]
+layout_mode = 2
 
-[node name="RecruitInfo2" parent="ScrollContainer/RecruitInfoList" unique_id=192245710 instance=ExtResource("2_recruitinfo")]
+[node name="Information" parent="ScrollContainer/RecruitInfoList/RecruitInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(192245709, -982522293) index="2" unique_id=1999868967]
+text = "C등급"
 
-[node name="RecruitInfo3" parent="ScrollContainer/RecruitInfoList" unique_id=192245711 instance=ExtResource("2_recruitinfo")]
-
-[node name="RecruitInfo4" parent="ScrollContainer/RecruitInfoList" unique_id=192245712 instance=ExtResource("2_recruitinfo")]
-
-[node name="RecruitInfo5" parent="ScrollContainer/RecruitInfoList" unique_id=192245713 instance=ExtResource("2_recruitinfo")]
+[editable path="ScrollContainer/RecruitInfoList/RecruitInfo"]

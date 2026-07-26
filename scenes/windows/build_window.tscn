@@ -1,12 +1,11 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://btstq47osom4e"]
 
 [ext_resource type="FontFile" uid="uid://deimdqp32x0o" path="res://assets/fonts/MonaS10.ttf" id="1_font"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slot"]
-bg_color = Color(0.6, 0.6, 0.6, 1)
+[ext_resource type="PackedScene" uid="uid://bycvh6v57cfu4" path="res://scenes/ui_common/base_info.tscn" id="2_u4k71"]
 
 [node name="BuildWindow" type="VBoxContainer" unique_id=6640001]
-layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 15
@@ -24,99 +23,18 @@ layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="SlotGrid" type="GridContainer" parent="ScrollContainer" unique_id=6640004]
+[node name="FacilityList" type="VBoxContainer" parent="ScrollContainer" unique_id=469551625]
 layout_mode = 2
 size_flags_horizontal = 3
-columns = 3
-theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 20
+theme_override_constants/separation = 15
 
-[node name="BuildSlot" type="PanelContainer" parent="ScrollContainer/SlotGrid" unique_id=6640005]
-custom_minimum_size = Vector2(0, 150)
+[node name="FacilityInfo" parent="ScrollContainer/FacilityList" unique_id=-982522295 instance=ExtResource("2_u4k71")]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
 
-[node name="Label" type="Label" parent="ScrollContainer/SlotGrid/BuildSlot" unique_id=6640006]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_font")
-theme_override_font_sizes/font_size = 24
-text = "빈 부지"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Name" parent="ScrollContainer/FacilityList/FacilityInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(-982522295, -982522293) index="1" unique_id=-982522291]
+text = "시설 이름"
 
-[node name="BuildSlot2" type="PanelContainer" parent="ScrollContainer/SlotGrid" unique_id=6640007]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
+[node name="Information" parent="ScrollContainer/FacilityList/FacilityInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(-982522295, -982522293) index="2" unique_id=1999868967]
+text = "1,200만원"
 
-[node name="Label" type="Label" parent="ScrollContainer/SlotGrid/BuildSlot2" unique_id=6640008]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_font")
-theme_override_font_sizes/font_size = 24
-text = "빈 부지"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="BuildSlot3" type="PanelContainer" parent="ScrollContainer/SlotGrid" unique_id=6640009]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
-
-[node name="Label" type="Label" parent="ScrollContainer/SlotGrid/BuildSlot3" unique_id=6640010]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_font")
-theme_override_font_sizes/font_size = 24
-text = "빈 부지"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="BuildSlot4" type="PanelContainer" parent="ScrollContainer/SlotGrid" unique_id=6640011]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
-
-[node name="Label" type="Label" parent="ScrollContainer/SlotGrid/BuildSlot4" unique_id=6640012]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_font")
-theme_override_font_sizes/font_size = 24
-text = "빈 부지"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="BuildSlot5" type="PanelContainer" parent="ScrollContainer/SlotGrid" unique_id=6640013]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
-
-[node name="Label" type="Label" parent="ScrollContainer/SlotGrid/BuildSlot5" unique_id=6640014]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_font")
-theme_override_font_sizes/font_size = 24
-text = "빈 부지"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="BuildSlot6" type="PanelContainer" parent="ScrollContainer/SlotGrid" unique_id=6640015]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_slot")
-
-[node name="Label" type="Label" parent="ScrollContainer/SlotGrid/BuildSlot6" unique_id=6640016]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_font")
-theme_override_font_sizes/font_size = 24
-text = "빈 부지"
-horizontal_alignment = 1
-vertical_alignment = 1
+[editable path="ScrollContainer/FacilityList/FacilityInfo"]
