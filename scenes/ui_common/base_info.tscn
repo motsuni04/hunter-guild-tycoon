@@ -13,9 +13,12 @@ texture_normal = ExtResource("1_qd3ka")
 stretch_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=-982522294]
-layout_mode = 0
-offset_right = 427.0
-offset_bottom = 120.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 30

@@ -34,11 +34,29 @@ layout_mode = 2
 [node name="TeamInfo2" parent="ScrollContainer/TeamInfoList" unique_id=1673504823 instance=ExtResource("2_csilb")]
 layout_mode = 2
 
+[node name="Number" parent="ScrollContainer/TeamInfoList/TeamInfo2/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(1673504823, 125974877) index="0" unique_id=494741672]
+text = "2팀"
+
 [node name="TeamInfo3" parent="ScrollContainer/TeamInfoList" unique_id=176382293 instance=ExtResource("2_csilb")]
 layout_mode = 2
+
+[node name="Number" parent="ScrollContainer/TeamInfoList/TeamInfo3/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(176382293, 125974877) index="0" unique_id=494741672]
+text = "3팀"
 
 [node name="TeamInfo4" parent="ScrollContainer/TeamInfoList" unique_id=501394827 instance=ExtResource("2_csilb")]
 layout_mode = 2
 
+[node name="Number" parent="ScrollContainer/TeamInfoList/TeamInfo4/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(501394827, 125974877) index="0" unique_id=494741672]
+text = "4팀"
+
 [node name="TeamInfo5" parent="ScrollContainer/TeamInfoList" unique_id=1485362802 instance=ExtResource("2_csilb")]
 layout_mode = 2
+
+[node name="Number" parent="ScrollContainer/TeamInfoList/TeamInfo5/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(1485362802, 125974877) index="0" unique_id=494741672]
+text = "5팀"
+
+[editable path="ScrollContainer/TeamInfoList/TeamInfo"]
+[editable path="ScrollContainer/TeamInfoList/TeamInfo2"]
+[editable path="ScrollContainer/TeamInfoList/TeamInfo3"]
+[editable path="ScrollContainer/TeamInfoList/TeamInfo4"]
+[editable path="ScrollContainer/TeamInfoList/TeamInfo5"]

@@ -4,15 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://dfm5gln2eqcui" path="res://assets/images/game_background.svg" id="1_x5bf3"]
 
 [node name="TeamInfo" type="TextureButton" unique_id=877009764]
+custom_minimum_size = Vector2(0, 210)
 offset_right = 923.0
 offset_bottom = 210.0
 texture_normal = ExtResource("1_x5bf3")
 stretch_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=548881141]
-layout_mode = 0
-offset_right = 923.0
-offset_bottom = 210.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
