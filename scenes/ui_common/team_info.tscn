@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://dmhk1cnrx323r"]
 
 [ext_resource type="FontFile" uid="uid://deimdqp32x0o" path="res://assets/fonts/MonaS10.ttf" id="1_kryvg"]
+[ext_resource type="Texture2D" uid="uid://dfm5gln2eqcui" path="res://assets/images/game_background.svg" id="1_x5bf3"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sqpmx"]
-
-[node name="TeamInfo" type="PanelContainer" unique_id=4571090]
-theme_override_styles/panel = SubResource("StyleBoxFlat_sqpmx")
+[node name="TeamInfo" type="TextureButton" unique_id=877009764]
+offset_right = 923.0
+offset_bottom = 210.0
+texture_normal = ExtResource("1_x5bf3")
+stretch_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=548881141]
-layout_mode = 2
+layout_mode = 0
+offset_right = 923.0
+offset_bottom = 210.0
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15

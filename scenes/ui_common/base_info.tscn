@@ -1,17 +1,21 @@
 [gd_scene format=3 uid="uid://bycvh6v57cfu4"]
 
 [ext_resource type="FontFile" uid="uid://deimdqp32x0o" path="res://assets/fonts/MonaS10.ttf" id="1_6twor"]
+[ext_resource type="Texture2D" uid="uid://dfm5gln2eqcui" path="res://assets/images/game_background.svg" id="1_qd3ka"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_recruitinfo"]
-
-[node name="BaseInfo" type="PanelContainer" unique_id=-982522295]
+[node name="BaseInfo" type="TextureButton" unique_id=855929074]
 custom_minimum_size = Vector2(0, 120)
+offset_right = 427.0
+offset_bottom = 120.0
 size_flags_horizontal = 3
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_recruitinfo")
+texture_normal = ExtResource("1_qd3ka")
+stretch_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=-982522294]
-layout_mode = 2
+layout_mode = 0
+offset_right = 427.0
+offset_bottom = 120.0
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 30
