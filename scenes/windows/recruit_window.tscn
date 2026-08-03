@@ -31,7 +31,10 @@ theme_override_constants/separation = 15
 [node name="RecruitInfo" parent="ScrollContainer/RecruitInfoList" unique_id=192245709 instance=ExtResource("2_recruitinfo")]
 layout_mode = 2
 
-[node name="Information" parent="ScrollContainer/RecruitInfoList/RecruitInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(192245709, -982522293) index="2" unique_id=1999868967]
+[node name="FrontInformation" parent="ScrollContainer/RecruitInfoList/RecruitInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(192245709, -982522293) index="1" unique_id=283107141]
+text = "직업"
+
+[node name="BackInformation" parent="ScrollContainer/RecruitInfoList/RecruitInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(192245709, -982522293) index="3" unique_id=1999868967]
 text = "C등급"
 
 [editable path="ScrollContainer/RecruitInfoList/RecruitInfo"]

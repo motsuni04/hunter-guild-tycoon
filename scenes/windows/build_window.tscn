@@ -31,10 +31,13 @@ theme_override_constants/separation = 15
 [node name="FacilityInfo" parent="ScrollContainer/FacilityList" unique_id=-982522295 instance=ExtResource("2_u4k71")]
 layout_mode = 2
 
-[node name="Name" parent="ScrollContainer/FacilityList/FacilityInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(-982522295, -982522293) index="1" unique_id=-982522291]
+[node name="FrontInformation" parent="ScrollContainer/FacilityList/FacilityInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(-982522295, -982522293) index="1" unique_id=283107141]
 text = "시설 이름"
 
-[node name="Information" parent="ScrollContainer/FacilityList/FacilityInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(-982522295, -982522293) index="2" unique_id=1999868967]
+[node name="MiddleInformation" parent="ScrollContainer/FacilityList/FacilityInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(-982522295, -982522293) index="2" unique_id=-982522291]
+text = "건설 레벨"
+
+[node name="BackInformation" parent="ScrollContainer/FacilityList/FacilityInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(-982522295, -982522293) index="3" unique_id=1999868967]
 text = "1,200만원"
 
 [editable path="ScrollContainer/FacilityList/FacilityInfo"]

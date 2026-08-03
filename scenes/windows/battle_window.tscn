@@ -31,10 +31,13 @@ theme_override_constants/separation = 15
 [node name="DungeonInfo" parent="ScrollContainer/DungeonInfoList" unique_id=6620005 instance=ExtResource("2_recruitinfo")]
 layout_mode = 2
 
-[node name="Name" parent="ScrollContainer/DungeonInfoList/DungeonInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(6620005, -982522293) index="1" unique_id=-982522291]
+[node name="FrontInformation" parent="ScrollContainer/DungeonInfoList/DungeonInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(6620005, -982522293) index="1" unique_id=283107141]
+text = "던전 등급"
+
+[node name="Name" parent="ScrollContainer/DungeonInfoList/DungeonInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(6620005, -982522293) index="2" unique_id=-982522291]
 text = "던전 이름"
 
-[node name="Information" parent="ScrollContainer/DungeonInfoList/DungeonInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(6620005, -982522293) index="2" unique_id=1999868967]
-text = "최하급"
+[node name="BackInformation" parent="ScrollContainer/DungeonInfoList/DungeonInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(6620005, -982522293) index="3" unique_id=1999868967]
+text = "던전 특성"
 
 [editable path="ScrollContainer/DungeonInfoList/DungeonInfo"]
