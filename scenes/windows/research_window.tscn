@@ -31,10 +31,10 @@ theme_override_constants/separation = 15
 [node name="TechInfo" parent="ScrollContainer/TechInfoList" unique_id=6660005 instance=ExtResource("2_recruitinfo")]
 layout_mode = 2
 
-[node name="Name" parent="ScrollContainer/TechInfoList/TechInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(6660005, -982522293) index="1" unique_id=-982522291]
+[node name="MiddleInformation" parent="ScrollContainer/TechInfoList/TechInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(6660005, -982522293) index="2" unique_id=-982522291]
 text = "기술 이름"
 
-[node name="Information" parent="ScrollContainer/TechInfoList/TechInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(6660005, -982522293) index="2" unique_id=1999868967]
+[node name="BackInformation" parent="ScrollContainer/TechInfoList/TechInfo/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(6660005, -982522293) index="3" unique_id=1999868967]
 text = "1,500만원"
 
 [editable path="ScrollContainer/TechInfoList/TechInfo"]
