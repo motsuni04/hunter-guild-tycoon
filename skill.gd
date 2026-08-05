@@ -5,7 +5,9 @@ extends Resource
 @export var skill_name: String
 @export var skill_type: String
 @export var job_name: String
+
 var power: int
+var damage: int
 var skill_effect: Array[Callable] = []
 
 
@@ -24,8 +26,9 @@ func execute(caster, target) -> void:
 		effect.call(caster, target, self)
 
 #공용 스킬
-func base_damage(caster, target, skill):
-	power = 0
+static func base_damage(caster, target, skill):
+	skill.power = 0
+	target.take_damage(skill.damage)
 
 
 #1차 직업 스킬
