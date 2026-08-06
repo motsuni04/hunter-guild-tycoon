@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Tech" format=3]
+
+[ext_resource type="Texture2D" uid="uid://djgi34rpvv5c7" path="res://assets/images/tech_empty.png" id="1_icon"]
+[ext_resource type="Script" uid="uid://diw8sivsyq6ye" path="res://tech.gd" id="1_script"]
+[ext_resource type="Resource" uid="uid://dfdk4jxf7cekn" path="res://resources/tech/tier0_ledger.tres" id="2_ledger"]
+
+[resource]
+script = ExtResource("1_script")
+tech_id = 2
+tech_name = "협상술"
+icon = ExtResource("1_icon")
+description = "의뢰인과 유리한 조건으로 계약하는 법을 익힙니다.
+의뢰 보상이 15% 증가합니다."
+cost = 300
+tier = 1
+requirements = Array[Tech]([ExtResource("2_ledger")])
+metadata/_custom_type_script = "uid://diw8sivsyq6ye"

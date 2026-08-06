@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Tech" format=3 uid="uid://c1cjv0bw2phtt"]
+
+[ext_resource type="Texture2D" uid="uid://760hdi4mxgj7" path="res://assets/images/tech_strategy.png" id="1_5vdyh"]
+[ext_resource type="Script" uid="uid://diw8sivsyq6ye" path="res://tech.gd" id="1_45oty"]
+
+[resource]
+script = ExtResource("1_45oty")
+tech_id = 1
+tech_name = "기초 전술"
+icon = ExtResource("1_5vdyh")
+description = "보다 효과적으로 싸우는 방법을 교육합니다.
+초기 전투력이 10 상승합니다.
+"
+cost = 100
+metadata/_custom_type_script = "uid://diw8sivsyq6ye"

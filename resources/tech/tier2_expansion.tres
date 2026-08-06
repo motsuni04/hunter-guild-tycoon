@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Tech" format=3]
+
+[ext_resource type="Texture2D" uid="uid://djgi34rpvv5c7" path="res://assets/images/tech_empty.png" id="1_icon"]
+[ext_resource type="Script" uid="uid://diw8sivsyq6ye" path="res://tech.gd" id="1_script"]
+[ext_resource type="Resource" path="res://resources/tech/tier1_negotiation.tres" id="2_negotiation"]
+[ext_resource type="Resource" path="res://resources/tech/tier1_facility.tres" id="3_facility"]
+
+[resource]
+script = ExtResource("1_script")
+tech_id = 6
+tech_name = "길드 확장"
+icon = ExtResource("1_icon")
+description = "늘어난 자금과 설비로 길드 건물을 넓힙니다.
+헌터 수용 인원이 10명 증가합니다."
+cost = 700
+tier = 2
+requirements = Array[Tech]([ExtResource("2_negotiation"), ExtResource("3_facility")])
+metadata/_custom_type_script = "uid://diw8sivsyq6ye"

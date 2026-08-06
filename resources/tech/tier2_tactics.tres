@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Tech" format=3]
+
+[ext_resource type="Texture2D" uid="uid://djgi34rpvv5c7" path="res://assets/images/tech_empty.png" id="1_icon"]
+[ext_resource type="Script" uid="uid://diw8sivsyq6ye" path="res://tech.gd" id="1_script"]
+[ext_resource type="Resource" path="res://resources/tech/tier1_drill.tres" id="2_drill"]
+
+[resource]
+script = ExtResource("1_script")
+tech_id = 7
+tech_name = "정예 전술"
+icon = ExtResource("1_icon")
+description = "숙련된 헌터들을 위한 고급 전술을 연구합니다.
+파티 전원의 전투력이 20% 상승합니다."
+cost = 700
+tier = 2
+requirements = Array[Tech]([ExtResource("2_drill")])
+metadata/_custom_type_script = "uid://diw8sivsyq6ye"

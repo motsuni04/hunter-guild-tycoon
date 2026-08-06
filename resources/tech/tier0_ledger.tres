@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Tech" format=3 uid="uid://dfdk4jxf7cekn"]
+
+[ext_resource type="Texture2D" uid="uid://cs4gaa3hl4oit" path="res://assets/images/tech_ledger.png" id="1_g8eq5"]
+[ext_resource type="Script" uid="uid://diw8sivsyq6ye" path="res://tech.gd" id="1_u458r"]
+
+[resource]
+script = ExtResource("1_u458r")
+tech_name = "장부 관리"
+icon = ExtResource("1_g8eq5")
+description = "더욱 꼼꼼하게 수입과 지출을 관리합니다.
+매달 드는 유지비가 10% 감소합니다."
+cost = 100
+metadata/_custom_type_script = "uid://diw8sivsyq6ye"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Tech" format=3]
+
+[ext_resource type="Texture2D" uid="uid://djgi34rpvv5c7" path="res://assets/images/tech_empty.png" id="1_icon"]
+[ext_resource type="Script" uid="uid://diw8sivsyq6ye" path="res://tech.gd" id="1_script"]
+[ext_resource type="Resource" path="res://resources/tech/tier1_negotiation.tres" id="2_negotiation"]
+
+[resource]
+script = ExtResource("1_script")
+tech_id = 5
+tech_name = "장기 계약"
+icon = ExtResource("1_icon")
+description = "단골 의뢰인과 지속적인 계약을 체결합니다.
+매달 고정 수입이 발생합니다."
+cost = 700
+tier = 2
+requirements = Array[Tech]([ExtResource("2_negotiation")])
+metadata/_custom_type_script = "uid://diw8sivsyq6ye"

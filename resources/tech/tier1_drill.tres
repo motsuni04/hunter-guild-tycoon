@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Tech" format=3]
+
+[ext_resource type="Texture2D" uid="uid://djgi34rpvv5c7" path="res://assets/images/tech_empty.png" id="1_icon"]
+[ext_resource type="Script" uid="uid://diw8sivsyq6ye" path="res://tech.gd" id="1_script"]
+[ext_resource type="Resource" uid="uid://c1cjv0bw2phtt" path="res://resources/tech/tier0_strategy.tres" id="2_strategy"]
+
+[resource]
+script = ExtResource("1_script")
+tech_id = 4
+tech_name = "실전 훈련"
+icon = ExtResource("1_icon")
+description = "실제 전투를 상정한 훈련 과정을 도입합니다.
+헌터 육성 속도가 20% 증가합니다."
+cost = 300
+tier = 1
+requirements = Array[Tech]([ExtResource("2_strategy")])
+metadata/_custom_type_script = "uid://diw8sivsyq6ye"
