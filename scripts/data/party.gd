@@ -54,5 +54,14 @@ func clear_members() -> void:
 func total_power() -> int:
 	var power := 0
 	for hunter in members:
-		power += hunter.attack + hunter.defense + hunter.max_hp / 10
+		power += hunter.strength + hunter.mana + hunter.agility + hunter.max_hp() / 10
 	return power
+
+
+## 번아웃 헌터가 섞여 있으면 파견 전에 경고할 수 있다.
+func burned_out_members() -> Array[Hunter]:
+	var result: Array[Hunter] = []
+	for hunter in members:
+		if hunter.is_burnout():
+			result.append(hunter)
+	return result

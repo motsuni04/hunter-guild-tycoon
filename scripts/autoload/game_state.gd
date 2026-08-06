@@ -9,6 +9,10 @@ signal hunters_changed()
 signal date_changed(year: int, month: int, day: int)
 ## 새 게임이나 불러오기로 길드가 통째로 교체됐을 때. UI 전체 갱신용.
 signal guild_changed(guild: Guild)
+## 월급 지급 결과. in_debt면 지급 후 자금이 마이너스다.
+signal salaries_paid(total: int, in_debt: bool)
+## 자금이 마이너스로 떨어진 순간.
+signal fell_into_debt(gold: int)
 
 const SAVE_PATH := "user://savegame.tres"
 const DEFAULT_GUILD_NAME := "플레이어 길드"
@@ -92,10 +96,16 @@ func _set_guild(new_guild: Guild) -> void:
 		guild.gold_changed.disconnect(_on_gold_changed)
 		guild.hunters_changed.disconnect(_on_hunters_changed)
 		guild.date_changed.disconnect(_on_date_changed)
+		guild.month_passed.disconnect(_on_month_passed)
+		guild.salaries_paid.disconnect(_on_salaries_paid)
+		guild.fell_into_debt.disconnect(_on_fell_into_debt)
 	guild = new_guild
 	guild.gold_changed.connect(_on_gold_changed)
 	guild.hunters_changed.connect(_on_hunters_changed)
 	guild.date_changed.connect(_on_date_changed)
+	guild.month_passed.connect(_on_month_passed)
+	guild.salaries_paid.connect(_on_salaries_paid)
+	guild.fell_into_debt.connect(_on_fell_into_debt)
 
 	guild_changed.emit(guild)
 	gold_changed.emit(guild.gold)
@@ -113,3 +123,16 @@ func _on_hunters_changed() -> void:
 
 func _on_date_changed(year: int, month: int, day: int) -> void:
 	date_changed.emit(year, month, day)
+
+
+## 월급 지급 시점은 헌터 한 명만 봐서는 알 수 없으므로 여기서 처리한다.
+func _on_month_passed(_year: int, _month: int) -> void:
+	guild.pay_salaries()
+
+
+func _on_salaries_paid(total: int, in_debt: bool) -> void:
+	salaries_paid.emit(total, in_debt)
+
+
+func _on_fell_into_debt(value: int) -> void:
+	fell_into_debt.emit(value)
