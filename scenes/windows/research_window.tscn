@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dekqi22aa3pp5"]
 
 [ext_resource type="FontFile" uid="uid://deimdqp32x0o" path="res://assets/fonts/MonaS10.ttf" id="1_font"]
-[ext_resource type="Script" uid="uid://fbib34mwoenl" path="res://scenes/ui_common/tech_tree.gd" id="2_techtree"]
+[ext_resource type="Script" path="res://scenes/ui_common/tech_tree.gd" id="2_techtree"]
 
 [node name="ResearchWindow" type="VBoxContainer" unique_id=6660001]
 offset_right = 1920.0

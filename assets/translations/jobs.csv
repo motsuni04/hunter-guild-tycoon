@@ -1,0 +1,26 @@
+keys,ko,en
+JOB_WARRIOR_1,전사,Warrior
+JOB_WARRIOR_2,기사,Knight
+JOB_WARRIOR_3,기사왕,Grand Knight
+JOB_FIGHTER_1,격투가,Fighter
+JOB_FIGHTER_2,권투사,Pugilist
+JOB_FIGHTER_3,권왕,Fist Lord
+JOB_SWORDSMAN_1,검사,Swordsman
+JOB_SWORDSMAN_2,검객,Duelist
+JOB_SWORDSMAN_3,검성,Swordmaster
+JOB_ROGUE_1,도적,Rogue
+JOB_ROGUE_2,암살자,Assassin
+JOB_ROGUE_3,사신,Reaper
+JOB_ARCHER_1,궁수,Archer
+JOB_ARCHER_2,명궁,Marksman
+JOB_ARCHER_3,신궁,Bowmaster
+JOB_MAGE_1,마법사,Mage
+JOB_MAGE_2,마도사,Sorcerer
+JOB_MAGE_3,현자,Archmage
+JOB_MYSTIC_1,도사,Mystic
+JOB_MYSTIC_2,진인,Ritualist
+JOB_MYSTIC_3,선사,Ascendant
+JOB_PRIEST_1,성직자,Priest
+JOB_PRIEST_2,주교,Bishop
+JOB_PRIEST_3,성자,Saint
+JOB_PRIEST_3_F,성녀,Saintess

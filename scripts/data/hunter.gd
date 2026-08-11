@@ -1,56 +1,48 @@
 class_name Hunter
 extends Resource
 
-## 길드에 소속된 헌터 한 명의 데이터.
-## 전투 능력치뿐 아니라 월급·스트레스처럼 "헌터 개인에게 붙는 값"은 전부 여기에 둔다.
-## 반대로 "언제 월급을 주는가", "스트레스가 쌓이면 무슨 일이 생기는가" 같은 규칙은
-## 헌터 한 명만 봐서는 결정할 수 없으므로 Guild / GameState 쪽이 담당한다.
-
-## 레벨은 UI에 노출하지 않고, 등급이 오를 때만 알린다.
 signal grade_changed(grade: Grade)
 signal burned_out()
 
 enum Grade { D, C, B, A, S, SS, SSS }
+## 성자 성녀 구분용
+enum Gender { MALE, FEMALE }
 
 const GRADE_NAMES: Array[String] = ["D", "C", "B", "A", "S", "SS", "SSS"]
 const MAX_LEVEL := 30
-## 각 등급에 도달하는 최소 레벨. Grade 순서와 1:1로 대응한다.
-## D만 1레벨에서 시작하고 이후로는 5레벨마다 한 등급씩,
-## 마지막 SSS는 만렙(MAX_LEVEL)에 도달해야만 얻는다.
 const GRADE_LEVELS: Array[int] = [1, 5, 10, 15, 20, 25, MAX_LEVEL]
-## 등급별 기본 월급(만원). salary가 0일 때 이 값을 쓴다.
-const GRADE_SALARIES: Array[int] = [30, 60, 120, 250, 500, 900, 1500]
+## 임시 월급 기본값
+const BASE_SALARIES: Array[int] = [40, 100, 200, 370, 620, 940, 1400]
+const SALARY_MULTIPLIER_RANGE := Vector2(0.8, 1.2)
 
 ## 레벨업에 필요한 경험치 = BASE_EXPERIENCE * EXPERIENCE_GROWTH ^ (레벨 - 1).
-## 만렙이 낮은 대신 뒤로 갈수록 가파르게 오른다.
 const BASE_EXPERIENCE := 100
-const EXPERIENCE_GROWTH := 1.25
+const EXPERIENCE_GROWTH := 1.15
 
 const MAX_STRESS := 100
-## 레벨업 1회당 상승하는 능력치.
-const GROWTH := {"health": 10, "strength": 2, "agility": 2, "mana": 2}
+
+## D등급에 1차(기본), B등급에 2차, SS등급에 3차 직업으로 전직
+const TIER_GRADES: Array[Grade] = [Grade.D, Grade.B, Grade.SS]
 
 @export var hunter_id: int = 0
-@export var hunter_name: String = "이름 없음"
-@export var job_name: String = "무직"
+@export var hunter_name: String = "무명"
+@export var hunter_gender: Gender = Gender.MALE
 
-## 레벨은 내부 수치라 화면에 직접 띄우지 않는다. 등급(grade)만 노출한다.
+@export var job_line: String = "warrior"
+@export var job_tier: int = Job.MIN_TIER
+
 @export var level: int = 1
 @export var experience: int = 0
 
 @export_group("능력치")
-## 체력. 그대로 최대 HP가 된다.
 @export var health: int = 100
-## 근력. 물리 공격력.
 @export var strength: int = 10
-## 민첩. 행동 순서와 회피.
 @export var agility: int = 10
-## 마력. 마법 공격력.
 @export var mana: int = 10
 
 @export_group("길드 운영")
-## 월 지급액(만원). 0이면 등급 기본값(GRADE_SALARIES)을 따른다.
 @export var salary: int = 0
+@export var salary_multiplier: float = 1.0
 @export_range(0, MAX_STRESS) var stress: int = 0
 
 @export_group("스킬")
@@ -64,13 +56,16 @@ var grade: Grade:
 	get: return grade_for_level(level)
 
 
-## 지정한 등급에 갓 도달한 헌터를 만든다. 인재 모집에서 쓴다.
-static func create(new_name: String, new_job: String, new_grade: Grade) -> Hunter:
+static func create(new_name: String, line: String, new_grade: Grade, multiplier: float = 0.0) -> Hunter:
 	var hunter := Hunter.new()
 	hunter.hunter_name = new_name
-	hunter.job_name = new_job
+	hunter.job_line = line
 	hunter.level = min_level_for_grade(new_grade)
+	hunter.job_tier = tier_for_level(hunter.level)
 	hunter._apply_growth(hunter.level - 1)
+	hunter.salary_multiplier = multiplier if multiplier > 0.0 else randf_range(
+		SALARY_MULTIPLIER_RANGE.x, SALARY_MULTIPLIER_RANGE.y)
+	hunter.salary = hunter.expected_salary()
 	return hunter
 
 
@@ -101,6 +96,42 @@ func grade_progress() -> float:
 	return float(level - from) / float(to - from)
 
 
+#직업 / 전직
+## 그 레벨이면 몇 티어까지 전직 가능한지. 제때 전직했다고 볼 때의 티어다.
+static func tier_for_level(target_level: int) -> int:
+	var reached := grade_for_level(target_level)
+	var tier := Job.MIN_TIER
+	for i in range(1, TIER_GRADES.size()):
+		if reached >= TIER_GRADES[i]:
+			tier = i + 1
+	return tier
+
+
+## 지금 등급이 다음 티어 전직 조건을 만족하는가.
+func can_promote() -> bool:
+	return Job.can_promote(job_tier) and grade >= TIER_GRADES[job_tier]
+
+
+## 전직. 등급 조건을 만족하면 gain_experience()가 알아서 부른다.
+func promote() -> bool:
+	if not can_promote():
+		return false
+	job_tier += 1
+	return true
+
+
+## 다음 티어 전직에 필요한 등급. 3차면 현재 등급을 그대로 돌려준다.
+func next_promotion_grade() -> Grade:
+	if not Job.can_promote(job_tier):
+		return grade
+	return TIER_GRADES[job_tier]
+
+
+## 현재 언어로 된 직업 이름.
+func job_display_name() -> String:
+	return Job.display_name(job_line, job_tier, hunter_gender == Gender.FEMALE)
+
+
 #전투
 func max_hp() -> int:
 	return health
@@ -121,14 +152,6 @@ func take_damage(amount: int) -> void:
 
 func heal(amount: int) -> void:
 	current_hp = clampi(current_hp + maxi(0, amount), 0, max_hp())
-
-
-func physical_power() -> int:
-	return strength
-
-
-func magical_power() -> int:
-	return mana
 
 
 #성장
@@ -155,23 +178,40 @@ func gain_experience(amount: int) -> bool:
 		leveled_up = true
 	if level >= MAX_LEVEL:
 		experience = 0
+	# 전직 조건이 등급이라 등급이 오른 시점에만 확인하면 된다.
+	# 한 번에 여러 등급을 뛰어넘어도 while이 티어를 따라잡는다.
+	while promote():
+		pass
 	if grade != previous_grade:
 		grade_changed.emit(grade)
 	return leveled_up
 
 
+## 성장률은 직업 계열에서 나온다. 티어와는 무관하다.
 func _apply_growth(times: int) -> void:
 	if times <= 0:
 		return
-	health += GROWTH.health * times
-	strength += GROWTH.strength * times
-	agility += GROWTH.agility * times
-	mana += GROWTH.mana * times
+	var growth := Job.growth(job_line)
+	health += growth.health * times
+	strength += growth.strength * times
+	agility += growth.agility * times
+	mana += growth.mana * times
 
 
 #길드 운영
+## 등급 기준가. 개인차가 붙기 전의 밸런스 기준선이다.
+static func base_salary(target_grade: Grade) -> int:
+	return BASE_SALARIES[target_grade]
+
+
+## 실제로 매달 나가는 돈. 계약 금액이 그대로 나간다.
 func monthly_salary() -> int:
-	return salary if salary > 0 else GRADE_SALARIES[grade]
+	return salary
+
+
+## 지금 등급과 몸값 배율로 계산한 금액. 모집 시 계약액의 기준이 된다.
+func expected_salary() -> int:
+	return int(base_salary(grade) * salary_multiplier)
 
 
 func is_burnout() -> bool:

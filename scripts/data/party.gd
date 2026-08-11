@@ -8,7 +8,7 @@ const MAX_MEMBERS := 4
 @export var party_id: int = 1
 @export var members: Array[Hunter] = []
 ## 던전에 나가 있는 동안은 편성을 바꿀 수 없다.
-@export var is_dispatched: bool = false
+@export var is_working: bool = false
 
 
 func display_name() -> String:
@@ -32,30 +32,23 @@ func has_member(hunter: Hunter) -> bool:
 
 
 func add_member(hunter: Hunter) -> bool:
-	if hunter == null or is_dispatched or is_full() or has_member(hunter):
+	if hunter == null or is_working or is_full() or has_member(hunter):
 		return false
 	members.append(hunter)
 	return true
 
 
 func remove_member(hunter: Hunter) -> bool:
-	if is_dispatched or not has_member(hunter):
+	if is_working or not has_member(hunter):
 		return false
 	members.erase(hunter)
 	return true
 
 
 func clear_members() -> void:
-	if is_dispatched:
+	if is_working:
 		return
 	members.clear()
-
-
-func total_power() -> int:
-	var power := 0
-	for hunter in members:
-		power += hunter.strength + hunter.mana + hunter.agility + hunter.max_hp() / 10
-	return power
 
 
 ## 번아웃 헌터가 섞여 있으면 파견 전에 경고할 수 있다.

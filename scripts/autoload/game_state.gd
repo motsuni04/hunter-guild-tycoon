@@ -71,8 +71,10 @@ func advance_day(days: int = 1) -> void:
 var gold: int:
 	get: return guild.gold if guild else 0
 
+
 var member_count: int:
 	get: return guild.member_count() if guild else 0
+
 
 var member_capacity: int:
 	get: return guild.member_capacity if guild else 0

@@ -10,7 +10,7 @@ offset_bottom = 210.0
 size_flags_horizontal = 3
 texture_normal = ExtResource("1_x5bf3")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=548881141]
 layout_mode = 1

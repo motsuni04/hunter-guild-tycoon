@@ -25,7 +25,6 @@ GameState="*res://scripts/autoload/game_state.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -33,6 +32,11 @@ window/stretch/aspect="expand"
 
 pointing/android/enable_long_press_as_right_click=true
 pointing/emulate_touch_from_mouse=true
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/translations/jobs.ko.translation", "res://assets/translations/jobs.en.translation")
+locale/fallback="ko"
 
 [physics]
 
