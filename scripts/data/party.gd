@@ -49,12 +49,3 @@ func clear_members() -> void:
 	if is_working:
 		return
 	members.clear()
-
-
-## 번아웃 헌터가 섞여 있으면 파견 전에 경고할 수 있다.
-func burned_out_members() -> Array[Hunter]:
-	var result: Array[Hunter] = []
-	for hunter in members:
-		if hunter.is_burnout():
-			result.append(hunter)
-	return result
