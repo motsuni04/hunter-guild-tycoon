@@ -32,3 +32,7 @@ func _on_bgm_slider_value_changed(value: float) -> void:
 func _on_sfx_slider_value_changed(value: float) -> void:
 	var volume = int(value * 100)
 	sfx_volume.text = str(volume)
+
+
+func _on_font_option_item_selected(index: int) -> void:
+	FontManager.set_font(index as FontManager.Choice)

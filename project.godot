@@ -20,6 +20,7 @@ config/icon="uid://cxrx0qbt6vmvq"
 [autoload]
 
 GameState="*res://scripts/autoload/game_state.gd"
+FontManager="*res://scripts/autoload/font_manager.gd"
 
 [display]
 

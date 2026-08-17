@@ -149,7 +149,35 @@ text = "50"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1824306740]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Font" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1209439329]
+custom_minimum_size = Vector2(110, 80)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "폰트(테스트)"
+vertical_alignment = 1
+
+[node name="FontOption" type="OptionButton" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=596325936]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 28
+item_count = 3
+selected = 0
+popup/item_0/text = "기본 (Mona)"
+popup/item_0/id = 0
+popup/item_1/text = "SUIT"
+popup/item_1/id = 1
+popup/item_2/text = "원티드 산스"
+popup/item_2/id = 2
+
 [connection signal="pressed" from="Control/PanelContainer/TextureRect/Exit" to="." method="_on_exit_pressed"]
+[connection signal="item_selected" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/FontOption" to="." method="_on_font_option_item_selected"]
 [connection signal="value_changed" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/BgmSlider" to="." method="_on_bgm_slider_value_changed"]
 [connection signal="value_changed" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/SfxSlider" to="." method="_on_sfx_slider_value_changed"]
