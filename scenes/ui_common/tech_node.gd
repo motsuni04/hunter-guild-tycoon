@@ -4,6 +4,7 @@ extends Button
 
 const FONT := preload("res://assets/fonts/MonaS10.ttf")
 const PLACEHOLDER_ICON := preload("res://assets/images/tech_empty.png")
+const PANEL_STYLE := preload("res://resources/ui/info_panel.tres")
 
 const NODE_SIZE := Vector2(180, 210)
 const ICON_SIZE := Vector2(96, 96)
@@ -19,6 +20,9 @@ static func create(p_tech: Tech) -> TechNode:
 
 func _ready() -> void:
 	custom_minimum_size = NODE_SIZE
+	# 상태별 색 구분은 연구 가능/완료 로직이 붙을 때 나눈다. 지금은 전부 같은 스타일.
+	for state in ["normal", "hover", "pressed", "disabled", "focus"]:
+		add_theme_stylebox_override(state, PANEL_STYLE)
 	if tech == null:
 		return
 	tooltip_text = tech.description

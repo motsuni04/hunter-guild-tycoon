@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://brx22e1hq2frs"]
 
 [ext_resource type="Script" uid="uid://clc8l5q8qg5fx" path="res://scenes/popups/setting.gd" id="1_110nh"]
-[ext_resource type="Texture2D" uid="uid://dfm5gln2eqcui" path="res://assets/images/game_background.svg" id="2_110nh"]
+[ext_resource type="FontFile" uid="uid://deimdqp32x0o" path="res://assets/fonts/MonaS10.ttf" id="2_font"]
+[ext_resource type="StyleBoxFlat" path="res://resources/ui/info_panel.tres" id="3_style"]
 
 [node name="Setting" type="CenterContainer" unique_id=1103409797]
 anchors_preset = 15
@@ -27,13 +28,13 @@ offset_right = 300.0
 offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_style")
 
-[node name="TextureRect" type="TextureRect" parent="Control/PanelContainer" unique_id=333873032]
+[node name="Overlay" type="Control" parent="Control/PanelContainer" unique_id=333873032]
 layout_mode = 2
-texture = ExtResource("2_110nh")
-stretch_mode = 1
+mouse_filter = 2
 
-[node name="Exit" type="Button" parent="Control/PanelContainer/TextureRect" unique_id=1518566050]
+[node name="Exit" type="Button" parent="Control/PanelContainer/Overlay" unique_id=1518566050]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -41,7 +42,13 @@ anchor_right = 1.0
 offset_left = -8.0
 offset_bottom = 8.0
 grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("3_style")
+theme_override_styles/hover = ExtResource("3_style")
+theme_override_styles/pressed = ExtResource("3_style")
+theme_override_styles/focus = ExtResource("3_style")
 text = "  X  "
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer" unique_id=105530857]
@@ -63,8 +70,8 @@ mouse_filter = 2
 [node name="Master" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=504179635]
 custom_minimum_size = Vector2(110, 80)
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 32
 text = "전체"
 vertical_alignment = 1
@@ -80,8 +87,8 @@ value = 0.5
 [node name="MasterVolume" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1741771383]
 custom_minimum_size = Vector2(70, 80)
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 32
 text = "50"
 horizontal_alignment = 1
@@ -94,8 +101,8 @@ mouse_filter = 2
 [node name="Bgm" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=844392961]
 custom_minimum_size = Vector2(110, 80)
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 32
 text = "BGM"
 vertical_alignment = 1
@@ -111,8 +118,8 @@ value = 0.5
 [node name="BgmVolume" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1095702499]
 custom_minimum_size = Vector2(70, 80)
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 32
 text = "50"
 horizontal_alignment = 1
@@ -125,8 +132,8 @@ mouse_filter = 2
 [node name="Sfx" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1209439328]
 custom_minimum_size = Vector2(110, 80)
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 32
 text = "효과음"
 vertical_alignment = 1
@@ -142,8 +149,8 @@ value = 0.5
 [node name="SfxVolume" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1871984032]
 custom_minimum_size = Vector2(70, 80)
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 32
 text = "50"
 horizontal_alignment = 1
@@ -156,8 +163,8 @@ mouse_filter = 2
 [node name="Font" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1209439329]
 custom_minimum_size = Vector2(110, 80)
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 32
 text = "폰트(테스트)"
 vertical_alignment = 1
@@ -166,7 +173,13 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = ExtResource("3_style")
+theme_override_styles/hover = ExtResource("3_style")
+theme_override_styles/pressed = ExtResource("3_style")
+theme_override_styles/focus = ExtResource("3_style")
 item_count = 3
 selected = 0
 popup/item_0/text = "기본 (Mona)"
@@ -176,8 +189,5 @@ popup/item_1/id = 1
 popup/item_2/text = "원티드 산스"
 popup/item_2/id = 2
 
-[connection signal="pressed" from="Control/PanelContainer/TextureRect/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/Overlay/Exit" to="." method="_on_exit_pressed"]
 [connection signal="item_selected" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/FontOption" to="." method="_on_font_option_item_selected"]
-[connection signal="value_changed" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
-[connection signal="value_changed" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/BgmSlider" to="." method="_on_bgm_slider_value_changed"]
-[connection signal="value_changed" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/SfxSlider" to="." method="_on_sfx_slider_value_changed"]

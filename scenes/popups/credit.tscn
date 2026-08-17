@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://0nuueia0xwnq"]
 
 [ext_resource type="Script" uid="uid://gfbqqlrlaayn" path="res://scenes/popups/credit.gd" id="1_pxe7y"]
-[ext_resource type="Texture2D" uid="uid://dfm5gln2eqcui" path="res://assets/images/game_background.svg" id="2_pxe7y"]
+[ext_resource type="FontFile" uid="uid://deimdqp32x0o" path="res://assets/fonts/MonaS10.ttf" id="2_font"]
+[ext_resource type="StyleBoxFlat" path="res://resources/ui/info_panel.tres" id="3_style"]
 
 [node name="Credit" type="CenterContainer" unique_id=370040019]
 anchors_preset = 15
@@ -27,13 +28,13 @@ offset_right = 600.0
 offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_style")
 
-[node name="TextureRect" type="TextureRect" parent="Control/PanelContainer" unique_id=148883096]
+[node name="Overlay" type="Control" parent="Control/PanelContainer" unique_id=148883096]
 layout_mode = 2
-texture = ExtResource("2_pxe7y")
-stretch_mode = 1
+mouse_filter = 2
 
-[node name="Exit" type="Button" parent="Control/PanelContainer/TextureRect" unique_id=1473801735]
+[node name="Exit" type="Button" parent="Control/PanelContainer/Overlay" unique_id=1473801735]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -41,7 +42,13 @@ anchor_right = 1.0
 offset_left = -8.0
 offset_bottom = 8.0
 grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("3_style")
+theme_override_styles/hover = ExtResource("3_style")
+theme_override_styles/pressed = ExtResource("3_style")
+theme_override_styles/focus = ExtResource("3_style")
 text = "  X  "
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer" unique_id=1809586687]
@@ -58,56 +65,50 @@ mouse_filter = 2
 
 [node name="Credit" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1417794775]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 32
 text = "<크레딧>"
 horizontal_alignment = 1
 
 [node name="Development" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=2108807265]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 32
 text = "개발: 대 도 현"
 horizontal_alignment = 1
 
 [node name="Graphic" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1973549648]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 32
 text = "그래픽: 대 도 현"
 horizontal_alignment = 1
 
 [node name="Story" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1013141582]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 32
 text = "스토리: 대 도 현"
 horizontal_alignment = 1
 
 [node name="Sound" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=72769163]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 32
 text = "사운드: 대 도 현"
 horizontal_alignment = 1
 
 [node name="SpecialThanks" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1198820549]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 32
 text = "Special Thanks: 대 도 현"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="Control/PanelContainer/TextureRect/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/Overlay/Exit" to="." method="_on_exit_pressed"]
