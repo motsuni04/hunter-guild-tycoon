@@ -1,3 +1,6 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# 에디터가 씬을 저장할 때 남기는 임시 파일
+*.tmp

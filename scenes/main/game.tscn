@@ -171,21 +171,19 @@ theme_override_constants/margin_bottom = 20
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/LowBar/MarginContainer" unique_id=1441437311]
 layout_mode = 2
 
-[node name="RecruitButton" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=1849632553 instance=ExtResource("2_feb5d")]
+[node name="HunterButton" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=97632282 instance=ExtResource("2_feb5d")]
 custom_minimum_size = Vector2(180, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 36
-text = "인재 모집
-"
+text = "헌터 목록"
 
-[node name="TrainButton" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=97632282 instance=ExtResource("2_feb5d")]
+[node name="BattleButton" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=1185624381 instance=ExtResource("2_feb5d")]
 custom_minimum_size = Vector2(180, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 36
-text = "헌터 육성
-"
+text = "던전 파견"
 
 [node name="TeamButton" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=995868638 instance=ExtResource("2_feb5d")]
 custom_minimum_size = Vector2(180, 80)
@@ -195,12 +193,13 @@ theme_override_font_sizes/font_size = 36
 text = "파티 편성
 "
 
-[node name="BattleButton" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=1185624381 instance=ExtResource("2_feb5d")]
+[node name="RecruitButton" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=1849632553 instance=ExtResource("2_feb5d")]
 custom_minimum_size = Vector2(180, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 36
-text = "던전 파견"
+text = "인재 모집
+"
 
 [node name="BuildButton" parent="VBoxContainer/LowBar/MarginContainer/HBoxContainer2" unique_id=275923653 instance=ExtResource("2_feb5d")]
 custom_minimum_size = Vector2(180, 80)
@@ -224,10 +223,10 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 36
 text = "기술 연구"
 
-[connection signal="pressed" from="VBoxContainer/LowBar/MarginContainer/HBoxContainer2/RecruitButton" to="." method="_on_recruit_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/LowBar/MarginContainer/HBoxContainer2/TrainButton" to="." method="_on_train_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/LowBar/MarginContainer/HBoxContainer2/TeamButton" to="." method="_on_team_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LowBar/MarginContainer/HBoxContainer2/HunterButton" to="." method="_on_hunter_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/LowBar/MarginContainer/HBoxContainer2/BattleButton" to="." method="_on_battle_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LowBar/MarginContainer/HBoxContainer2/TeamButton" to="." method="_on_team_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LowBar/MarginContainer/HBoxContainer2/RecruitButton" to="." method="_on_recruit_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/LowBar/MarginContainer/HBoxContainer2/BuildButton" to="." method="_on_build_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/LowBar/MarginContainer/HBoxContainer2/ItemButton" to="." method="_on_item_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/LowBar/MarginContainer/HBoxContainer2/ResearchButton" to="." method="_on_research_button_pressed"]

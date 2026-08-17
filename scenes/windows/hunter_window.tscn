@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://deimdqp32x0o" path="res://assets/fonts/MonaS10.ttf" id="1_font"]
 [ext_resource type="PackedScene" uid="uid://bycvh6v57cfu4" path="res://scenes/ui_common/base_info.tscn" id="2_recruitinfo"]
 
-[node name="TrainWindow" type="VBoxContainer" unique_id=6610001]
+[node name="HunterWindow" type="VBoxContainer" unique_id=6610001]
 offset_right = 1920.0
 offset_bottom = 1080.0
 size_flags_horizontal = 3
@@ -15,7 +15,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_font")
 theme_override_font_sizes/font_size = 40
-text = "헌터 육성"
+text = "헌터 목록"
 horizontal_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=6610003]
@@ -23,16 +23,16 @@ layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="TrainInfoList" type="VBoxContainer" parent="ScrollContainer" unique_id=6610004]
+[node name="HunterInfoList" type="VBoxContainer" parent="ScrollContainer" unique_id=6610004]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 15
 
-[node name="TrainInfo" parent="ScrollContainer/TrainInfoList" unique_id=6610005 instance=ExtResource("2_recruitinfo")]
+[node name="HunterInfo" parent="ScrollContainer/HunterInfoList" unique_id=6610005 instance=ExtResource("2_recruitinfo")]
 layout_mode = 2
 
-[node name="TrainInfo2" parent="ScrollContainer/TrainInfoList" unique_id=6610006 instance=ExtResource("2_recruitinfo")]
+[node name="HunterInfo2" parent="ScrollContainer/HunterInfoList" unique_id=6610006 instance=ExtResource("2_recruitinfo")]
 layout_mode = 2
 
-[node name="TrainInfo3" parent="ScrollContainer/TrainInfoList" unique_id=6610007 instance=ExtResource("2_recruitinfo")]
+[node name="HunterInfo3" parent="ScrollContainer/HunterInfoList" unique_id=6610007 instance=ExtResource("2_recruitinfo")]
 layout_mode = 2

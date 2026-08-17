@@ -1,7 +1,7 @@
 extends Control
 
 const RECRUIT_WINDOW := preload("res://scenes/windows/recruit_window.tscn")
-const TRAIN_WINDOW := preload("res://scenes/windows/train_window.tscn")
+const HUNTER_WINDOW := preload("res://scenes/windows/hunter_window.tscn")
 const TEAM_WINDOW := preload("res://scenes/windows/team_window.tscn")
 const BATTLE_WINDOW := preload("res://scenes/windows/battle_window.tscn")
 const BUILD_WINDOW := preload("res://scenes/windows/build_window.tscn")
@@ -10,7 +10,7 @@ const RESEARCH_WINDOW := preload("res://scenes/windows/research_window.tscn")
 
 @onready var controller_content: Container = $VBoxContainer/HBoxContainer/Controller/ControllerBackground/MarginContainer/ControllerContent
 @onready var recruit_button: Button = $VBoxContainer/LowBar/MarginContainer/HBoxContainer2/RecruitButton
-@onready var train_button: Button = $VBoxContainer/LowBar/MarginContainer/HBoxContainer2/TrainButton
+@onready var hunter_button: Button = $VBoxContainer/LowBar/MarginContainer/HBoxContainer2/HunterButton
 @onready var team_button: Button = $VBoxContainer/LowBar/MarginContainer/HBoxContainer2/TeamButton
 @onready var battle_button: Button = $VBoxContainer/LowBar/MarginContainer/HBoxContainer2/BattleButton
 @onready var build_button: Button = $VBoxContainer/LowBar/MarginContainer/HBoxContainer2/BuildButton
@@ -44,8 +44,8 @@ func _on_recruit_button_pressed() -> void:
 	_select(recruit_button, RECRUIT_WINDOW)
 
 
-func _on_train_button_pressed() -> void:
-	_select(train_button, TRAIN_WINDOW)
+func _on_hunter_button_pressed() -> void:
+	_select(hunter_button, HUNTER_WINDOW)
 
 
 func _on_team_button_pressed() -> void:
