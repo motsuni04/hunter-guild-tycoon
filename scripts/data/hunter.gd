@@ -2,7 +2,6 @@ class_name Hunter
 extends Resource
 
 signal grade_changed(grade: Grade)
-signal burned_out()
 
 enum Grade { D, C, B, A, S, SS, SSS }
 ## 성자 성녀 구분용
@@ -18,8 +17,6 @@ const SALARY_MULTIPLIER_RANGE := Vector2(0.8, 1.2)
 ## 레벨업에 필요한 경험치 = BASE_EXPERIENCE * EXPERIENCE_GROWTH ^ (레벨 - 1).
 const BASE_EXPERIENCE := 100
 const EXPERIENCE_GROWTH := 1.15
-
-const MAX_STRESS := 100
 
 ## D등급에 1차(기본), B등급에 2차, SS등급에 3차 직업으로 전직
 const TIER_GRADES: Array[Grade] = [Grade.D, Grade.B, Grade.SS]
@@ -43,7 +40,6 @@ const TIER_GRADES: Array[Grade] = [Grade.D, Grade.B, Grade.SS]
 @export_group("길드 운영")
 @export var salary: int = 0
 @export var salary_multiplier: float = 1.0
-@export_range(0, MAX_STRESS) var stress: int = 0
 
 @export_group("스킬")
 @export var skills: Array[Skill] = []
@@ -212,24 +208,3 @@ func monthly_salary() -> int:
 ## 지금 등급과 몸값 배율로 계산한 금액. 모집 시 계약액의 기준이 된다.
 func expected_salary() -> int:
 	return int(base_salary(grade) * salary_multiplier)
-
-
-func is_burnout() -> bool:
-	return stress >= MAX_STRESS
-
-
-func stress_ratio() -> float:
-	return float(stress) / float(MAX_STRESS)
-
-
-## 번아웃에 새로 도달했으면 burned_out을 발생시킨다.
-func add_stress(amount: int) -> void:
-	if amount <= 0 or is_burnout():
-		return
-	stress = mini(MAX_STRESS, stress + amount)
-	if is_burnout():
-		burned_out.emit()
-
-
-func relieve_stress(amount: int) -> void:
-	stress = maxi(0, stress - maxi(0, amount))
